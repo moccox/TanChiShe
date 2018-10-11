@@ -78,10 +78,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="operate.cpp" />
     <ClCompile Include="Snake.cpp" />
     <ClCompile Include="TanChiShe.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="operate.h" />
     <ClInclude Include="Snake.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

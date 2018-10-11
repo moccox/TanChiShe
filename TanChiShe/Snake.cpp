@@ -5,25 +5,37 @@
 void snake :: go_up()
 { 
 	//坐标上移，y-1
-		y--;
+	head++;
+	head->x = (head - 1)->x;
+	head->y = ((head - 1)->y - 1);
+	//是否擦除蛇尾在外部判断
 }
 
 void  snake :: go_left()
 {
 	//坐标左移，x-1
-		x--;
+	head++;
+	head->x = ((head - 1)->x - 1);
+	head->y = (head - 1)->y;
+	//是否擦除蛇尾在外部判断
 }
 
 void  snake :: go_down()
 {
 	//坐标下移，y+1
-		y++;
+	head++;
+	head->x = (head - 1)->x;
+	head->y = ((head - 1)->y + 1);
+	//是否擦除蛇尾在外部判断
 }
 
 void  snake :: go_right()
 {
 	//坐标右移，x+1
-		x++;
+	head++;
+	head->x = ((head - 1)->x + 1);
+	head->y = (head - 1)->y;
+	//是否擦除蛇尾在外部判断
 }
 
 
@@ -45,8 +57,13 @@ food :: food(int a, int b)
 	y = b;
 }
 
-snake :: snake(int a, int b)
+snake :: snake(int width, int height)
 {
-	x = a;
-	y = b;
+	//新建足以铺满地图的栈，并将蛇头和蛇尾指向栈底
+	head = tail = p = new point[width * height];
+}
+
+snake::~snake()
+{
+	 delete[] p;
 }
